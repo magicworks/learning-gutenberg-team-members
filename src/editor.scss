@@ -1,9 +1,135 @@
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.wp-block-learning-gutenberg-team-members {
+	display: block;
 
-.wp-block-create-block-boilerplate {
-	border: 1px dotted #f03;
+
+	@for $i from 1 through 6 {
+		&.has-#{$i}-columns {
+			/* stylelint-disable-next-line selector-class-pattern */
+			> .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+				.block-list-appender {
+					position: relative;
+					align-self: stretch;
+					width: calc(100% / #{$i} - 20px);
+					border: 1px dashed;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					min-height: 70px;
+					padding: 0 5px;
+				}
+
+				> [data-type="learning-gutenberg/team-member"] {
+					width: calc(100% / #{$i} - 20px);
+				}
+			}
+		}
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	> .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -10px;
+		margin-right: -10px;
+
+
+		[data-type="learning-gutenberg/team-member"] {
+			max-width: none;
+			margin: 0;
+		}
+
+		> [data-type="learning-gutenberg/team-member"] {
+			margin: 10px;
+
+			.block-editor-media-placeholder {
+				margin-bottom: 20px;
+			}
+
+			.wp-block-learning-gutenberg-team-member-img {
+				position: relative;
+				margin-bottom: 20px;
+
+				&.is-loading img {
+					opacity: 0.3;
+				}
+
+				.components-spinner {
+					position: absolute;
+					left: 0;
+					margin: auto;
+					right: 0;
+					top: 0;
+					bottom: 0;
+				}
+			}
+
+			.wp-block-learning-gutenberg-team-member-social-links {
+
+				ul {
+					list-style: none;
+					padding: 0;
+					margin: 20px -5px 0;
+
+					li {
+						display: inline-block;
+						margin: 5px;
+
+						span.dashicon {
+							color: #4e4e4e;
+						}
+
+						&.is-selected {
+							outline: 2px solid rgb(208, 40, 227);
+						}
+
+						button {
+							background: none;
+							border: none;
+							padding: 0;
+							cursor: pointer;
+							margin: 0;
+						}
+
+						&.wp-block-learning-gutenberg-team-member-add-icon-li {
+
+							button {
+								outline: 1px dashed;
+
+								span {
+									top: 1px;
+									left: 0;
+									position: relative;
+								}
+							}
+						}
+					}
+
+				}
+			}
+
+			.wp-block-learning-gutenberg-team-member-link-form {
+				border: 1px solid;
+				background: #fff;
+				padding: 10px;
+				margin-top: 10px;
+			}
+
+			[tagname="h4"] {
+				color: #222;
+				font-size: 22px;
+				font-size: bold;
+				margin-bottom: 0;
+				margin-top: 0;
+			}
+
+			[tagname="p"] {
+				color: #565656;
+				font-size: 16px;
+				font-weight: 300;
+				margin-bottom: 5px;
+				margin-top: 5px;
+			}
+		}
+	}
 }
