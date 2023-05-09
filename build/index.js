@@ -5540,6 +5540,7 @@ function Edit(_ref) {
   let {
     attributes,
     setAttributes,
+    context,
     noticeOperations,
     noticeUI,
     isSelected
@@ -5764,7 +5765,7 @@ function Edit(_ref) {
     allowedTypes: ['image'],
     disableMediaButtons: url,
     notices: noticeUI
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Context example - columns:", context['learning-gutenberg/team-members-columns']), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     ref: titleRef,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Member Name', 'team-member'),
     tagname: "h4",
@@ -5851,6 +5852,7 @@ __webpack_require__.r(__webpack_exports__);
     reusable: false,
     html: false
   },
+  usesContext: ['learning-gutenberg/team-members-columns'],
   attributes: {
     name: {
       type: 'string',

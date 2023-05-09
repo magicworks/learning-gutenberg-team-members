@@ -41,6 +41,7 @@ import SortableItem from './sortable-item';
 function Edit({
 	attributes,
 	setAttributes,
+	context,
 	noticeOperations,
 	noticeUI,
 	isSelected,
@@ -262,6 +263,10 @@ function Edit({
 					disableMediaButtons={url}
 					notices={noticeUI}
 				/>
+				<p>
+					Context example - columns:
+					{context['learning-gutenberg/team-members-columns']}
+				</p>
 				<RichText
 					ref={titleRef}
 					placeholder={__('Member Name', 'team-member')}

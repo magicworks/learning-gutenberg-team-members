@@ -13,6 +13,7 @@ registerBlockType('learning-gutenberg/team-member', {
 		reusable: false,
 		html: false,
 	},
+	usesContext: ['learning-gutenberg/team-members-columns'],
 	attributes: {
 		name: {
 			type: 'string',
